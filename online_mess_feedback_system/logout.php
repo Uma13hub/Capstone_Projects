@@ -1,0 +1,24 @@
+<?php
+//============================================================================================
+session_start();
+//============================================================================================
+if (isset($_SESSION['student'])) 
+{
+	$a=$_SESSION['student'];
+	session_destroy();
+	unset($_SESSION['student']);
+	header('location:index.html');
+}
+elseif(isset($_SESSION['security']))
+{
+	$a=$_SESSION['incharge'];
+	session_destroy();
+	unset($_SESSION['incharge']);
+	header('location:index.html');
+}
+else
+ {
+	header('location:index.html');
+}
+//============================================================================================
+?>
